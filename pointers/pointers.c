@@ -4,7 +4,7 @@
     Given a character pointer x (that points to an array of chars), and a
     character pointer y, copies the character contents of y over to x. Pointer
     arithmetic is necessary here. Also, make sure x points to a null terminator
-    at its end to terminate it properly. 
+    at its end to terminate it properly.
 
     Example call:
 
@@ -15,11 +15,18 @@
 */
 void string_copy(char *x, char *y)
 {
-
+    int i;
+    for (i = 0; i < strlen(x); i++)
+    {
+        printf("%c \n", x[i]);
+        y[i] = x[i];
+    }
+    y[i + 1] = '\0';
+    printf("%s 'i am the y", y);
 }
 
 /*
-    Searches the input string `str` for the first instance of the 
+    Searches the input string `str` for the first instance of the
     character `c` (an unsigned char). This function returns a pointer
     that points to the first instance of the character `c` in the
     input string `str`.
@@ -28,20 +35,24 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, int c)
 {
-
+    char *the_pointer = NULL;
+    if (str[c])
+    {
+        the_pointer = &str[c];
+    }
+    return the_pointer;
 }
 
 /*
     Searches the input string `haystack` for the first instance of
     the string `needle`. This function returns a pointer that points
     to the first instance of the string `needle` in the input
-    string `haystack`. 
+    string `haystack`.
 
     Do not use the `strstr` function from the standard library.
 */
 char *find_string(char *haystack, char *needle)
 {
-
 }
 
 #ifndef TESTING
